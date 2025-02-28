@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSC填报系统字数统计</title>
+    <title>树哥公派留学填报系统材料字符模拟统计</title>
     <meta name="keywords" content="CSC, 留学, 工具">
-    <meta name="description" content="方便各位提前测试自己填报CSC申请系统时各项材料是否字数符合要求。">
+    <meta name="description" content="CSC申请系统工具">
 
     <meta charset="utf-8">
 
@@ -16,22 +16,56 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="alternate" href="/atom.xml" title="树哥的csc留学星球">
-    <link rel="shortcut icon" href="/favicon.ico"> 
-
-
     <!-- Bootstrap -->
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
 
 	
-	
-	
-	
     <style type="text/css">
-      *{font-size:12px;}
-      .word{color:#FF3333;}
+        .tips{
+            position: relative;
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            top: -10px;
+        }
+        .tip{
+            animation: new 2s forwards;
+        }
+        @keyframes new {
+          0%{
+              transform:translateY(50px);
+              color:#FF3333;
+          }
+          100%{
+              transform:translateY(0px);
+              color:transparent;
+              display: none;
+          }
+      }
+      body::before {
+            content: '';
+            background-image: url('bg.webp'); /* 背景图片路径 */
+            background-size: cover; /* 自适应拉伸并覆盖整个页面 */
+            background-position: center; /* 图片居中 */
+            background-repeat: no-repeat; /* 防止图片重复 */
+            opacity: 0.2; /* 设置透明度（50%） */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* 将伪元素放在内容下方 */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: 100%; /* 使 body 占满整个视口高度 */
+        }
+      .redfont{color:#FF3333;}
       textarea{
+        background-color: rgba(255, 255, 255, 0.3); /* 50% opacity */
         width:100%; 
         height:300px;
         resize:none;
@@ -62,38 +96,35 @@
  
  
       </style>
-  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="树哥的csc留学星球" type="application/atom+xml">
 </head>
   <body>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
-          <br><br>
         </div>
       </div>
       <div class="row-fluid">
         <div class="span3 dis">
-
         </div>
         <div class="span6 disw">
           <h3>
-            填报系统材料字符模拟统计
+            树哥公派留学填报系统材料字符模拟统计
           </h3>
           <p>
             <script language="javascript">
               　var Today=new Date();
-              　document.write("<b>" + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日，<span style='color:red;'>填报未开始（预计3.10-3.31）。</span></b>");
+              　document.write("<h4> 今日日期： " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日</h4>");
               </script>
+              <h4><span class="redfont">请注意填报时间：3月10日0时至4月1日14时</span></h4>
           </p> 
           <p>
-              </p><h6>CSC填报系统每20分钟就会登出，在不断修改文字时会非常不方便。该页面使用方法：从Word拷贝文字到框中，就是个简单的字符计数（实际系统亦是如此），无安全问题。</h6>
-              <h6>如果对以下选项不是很清楚，请参见右下角《系统填报指南》。</h6>
-          <p></p>
-          <div style="display:none;">
-              <img src="">
-          </div>
+            <h5>使用方法：将填写内容从Word拷贝文字到框中，你就可以查看字符数啦，如果你对填写内容的写作要求不是很清楚，可以关注树哥的小红书以及查看官网填报指南。</h5>
+         </p>
+          <p>
+            <h5>温馨提示：该功能只是方便各位统计字符，方便打磨内容，无任何内容泄露隐患。</h5>
+          </p>
           <div class="radio" style="float:left;">
-            <label><input type="radio" name="optradio" checked><h7><b>成果概述</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <label><input type="radio" name="optradio" checked><h7><b>学术成果概述</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
           </div>
           <div class="radio" style="float:left;">
             <label><input type="radio" name="optradio"><h7><b>中文计划</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -106,15 +137,15 @@
           </div>
         
           <div style="clear: both;"></div>
-          <b>Word共计：<span id="word1" class="word">0</span>&nbsp;字，
-            <br>模拟系统统计：<span id="word" class="word">0</span>&nbsp;字符，
-            <br><span id="word3">成果概述</span>一栏<span id="word2">还可填写：<span class="word">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span></span></b><br>
+          <b>Word共计：<span id="ms_word_count" class="redfont">0</span>&nbsp;字，
+            <br>模拟系统统计：<span id="moni_count" class="redfont">0</span>&nbsp;字符，
+            <br>[ <span id="select_item">学术成果概述</span> ] 一栏<span id="remain_word">还可填写：<span class="redfont" id="remain_count">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span></span></b><br>
           <textarea id="txt" name cols rows class="form-control disw" style="padding-right:0px !important;margin-top: 5px;"></textarea>
 
           <ul class="thumbnails">
             <li class="span4">
-              <div class="thumbnail">
-                <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer"></a>
+              <div>
+                <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer"><img src="csc_logo.png" height="40px" style="background-color: white;"></a>
                 <div class="caption">
                   <h5>
                     <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer">CSC官方信息网站</a>
@@ -123,29 +154,30 @@
               </div>
             </li>
             <li class="span4">
-              <div class="thumbnail">
-                <a href="https://zhuanlan.zhihu.com/p/103408828" target="_blank" rel="external nofollow noopener noreferrer"></a>
+              <div>
+                <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer"><img src="./xhs.png" height="40px"></a>
                 <div class="caption">
                   <h5>
-                    <a href="https://zhuanlan.zhihu.com/p/103408828" target="_blank" rel="external nofollow noopener noreferrer">CSC申请综合指南</a>
+                    <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer">csc申请上岸经验指南</a>
                   </h5>
                 </div>
               </div>
             </li>
             <li class="span4">
-              <div class="thumbnail">
-                <a href="https://zhuanlan.zhihu.com/p/107347132" target="_blank" rel="external nofollow noopener noreferrer"></a>
-                <div class="caption">
-                  <h5>
-                    <a href="https://zhuanlan.zhihu.com/p/107347132" target="_blank" rel="external nofollow noopener noreferrer">CSC系统填报指南</a>
-                  </h5>
-                </div>
-              </div>
             </li>
           </ul>
-          <center><input class="btn" type="button" id="btn" value="留言反馈"></center><br>
-          <div id="valine_container" style="display: none;"><br></div>
-          
+          <div class="row-fluid">
+            <center>
+              <div class="tips">
+              </div>
+              <div>
+                <p>
+                  <img id="add_good"src="goodnews.webp" style="justify-content: center;">
+                </p>
+              </div>
+            </div>
+            </center>
+          </div>
           <div class="row-fluid">
             <div class="span12">
               <center><br>
@@ -173,35 +205,35 @@
          
         });
         $(".radio").click(function () {
-          $("#word3").text($(this)[0].innerText.trim().replace("三","").replace("一","").replace("千","")) ;
+          $("#select_item").text($(this)[0].innerText.trim().replace("三","").replace("一","").replace("千","")) ;
           $("#txt").val("");
-          $("#word").html("0");
-          $("#word1").html("0");
-          if($("#word3").text()=="国内导师"||$("#word3").text()=="国外导师"){
-            $("#word2").html('还可填写：<span class="word">1000</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
+          $("#moni_count").html("0");
+          $("#ms_word_count").html("0");
+          if($("#select_item").text()=="国内导师"||$("#select_item").text()=="国外导师"){
+            $("#remain_word").html('还可填写：<span class="redfont">1000</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
           } else{
-            $("#word2").html('还可填写：<span class="word">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
+            $("#remain_word").html('还可填写：<span class="redfont">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
           }
         });
-        $("#txt").keyup(function(){   
+        $("#txt").bind('input propertychange',function(){   
           let num = $("#txt").val().length;
-          if($("#word3").text()=="国内导师"||$("#word3").text()=="国外导师"){
+          if($("#select_item").text()=="国内导师"||$("#select_item").text()=="国外导师"){
             let n = 1000 - num;
             if(n > 0 || n == 0){
-              $("#word2").html('还可填写：<span class="word">'+n+'</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
+              $("#remain_word").html('还可填写：<span class="redfont">'+n+'</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
             }else{
-              $("#word2").html('<span class="word">已超出：'+(n+"").replace("-","")+'</span>&nbsp;字符<span style="color:red">（请删减！）</span>') ;
+              $("#remain_word").html('<span class="redfont">已超出：'+(n+"").replace("-","")+'</span>&nbsp;字符<span class="redfont">（请删减！）</span>') ;
             }
           } else{
             let n = 3000 - num;
             if(n > 0 || n == 0){
-              $("#word2").html('还可填写：<span class="word">'+n+'</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
+              $("#remain_word").html('还可填写：<span class="redfont">'+n+'</span>&nbsp;字符<span style="color:green">（符合要求）</span>') ;
             }else{
-              $("#word2").html('<span class="word">已超出：'+(n+"").replace("-","")+'</span>&nbsp;字符<span style="color:red">（请删减！）</span>') ;
+              $("#remain_word").html('<span class="redfont">已超出：'+(n+"").replace("-","")+'</span>&nbsp;字符<span class="redfont">（请删减！）</span>') ;
             }
           }
-          $("#word").text( num ) ;
-          $("#word1").text( fnGetCpmisWords($("#txt").val()) ) ;
+          $("#moni_count").text( num ) ;
+          $("#ms_word_count").text( fnGetCpmisWords($("#txt").val()) ) ;
         });
         function fnGetCpmisWords(str){
           sLen = 0;
@@ -216,7 +248,25 @@
           }
           return sLen;
         }
+
+        function muyu_click(){
+          //计数
+           //计数
+          count=$("#count")
+          num=parseInt(count.html())+1
+          //添加动画
+          $(".tips").prepend("<div class='tip' id='"+num+"-tip' style='z-index:"+num+"'><h4>接好运 +1</h4></div>")
+          setTimeout(function(){
+              tips=document.getElementsByClassName("tip");
+              tips[tips.length-1].remove()
+          },1500)
+      }
+        $("#add_good").click(function(){
+          muyu_click()
+      })
+
       });
+      
       </script>
   </body>
 </html>
