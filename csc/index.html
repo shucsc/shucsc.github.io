@@ -49,7 +49,7 @@
             background-size: cover; /* 自适应拉伸并覆盖整个页面 */
             background-position: center; /* 图片居中 */
             background-repeat: no-repeat; /* 防止图片重复 */
-            opacity: 0.2; /* 设置透明度（50%） */
+            opacity: 0.7; /* 设置透明度（50%） */
             position: absolute;
             top: 0;
             left: 0;
@@ -93,8 +93,10 @@
            margin-top:0px !important;
            margin-bottom:0px !important;
            }
- 
- 
+
+           .midtxt{
+            font-size: medium !important;
+           }
       </style>
 </head>
   <body>
@@ -107,77 +109,87 @@
         <div class="span3 dis">
         </div>
         <div class="span6 disw">
-          <h3>
-            树哥公派留学填报系统材料字符模拟统计
-          </h3>
+          <center>
+            <h2>
+              树哥公派留学填报系统材料字符模拟统计
+            </h2>
+          </center>
           <p>
-            <script language="javascript">
-              　var Today=new Date();
-              　document.write("<h4> 今日日期： " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日</h4>");
-              </script>
-              <h4><span class="redfont">请注意填报时间：3月10日0时至4月1日14时</span></h4>
+            <center>
+              <script language="javascript">
+                　var Today=new Date();
+                　document.write("<h3>今日日期： " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日</h3>");
+                </script>
+                <h3><span class="redfont">请注意填报时间：3月10日0时至4月1日14时（北京时间）</span></h3>
+            </center>
           </p> 
-          <p>
-            <h5>使用方法：将填写内容从Word拷贝文字到框中，你就可以查看字符数啦，如果你对填写内容的写作要求不是很清楚，可以关注树哥的小红书以及查看官网填报指南。</h5>
-         </p>
-          <p>
-            <h5>温馨提示：该功能只是方便各位统计字符，方便打磨内容，无任何内容泄露隐患。</h5>
+          <div>
+            <h4>使用方法：将填写内容从Word拷贝文字到框中，你就可以查看字符数啦，如果你对填写内容的写作要求不是很清楚，可以关注树哥的小红书以及查看官网填报指南。</h4>
+            <h4>温馨提示：该功能只是方便各位统计字符，方便打磨内容，无任何内容泄露隐患。</h4>
+          </div>
+            <div style="clear: both;"></div>
+            <div class="radio" style="float:left;">
+              <label><input type="radio" name="optradio" checked><b class="midtxt">学术成果概述</b>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div class="radio" style="float:left;margin-left: 10px;">
+              <label><input type="radio" name="optradio"><b class="midtxt">中文计划</b>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div class="radio" style="float:left;margin-left: 10px;">
+              <label><input type="radio" name="optradio"><b class="midtxt">国外导师</b>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div class="radio" style="float:left;margin-left: 10px;">
+              <label><input type="radio" name="optradio"><b class="midtxt">国内导师</b>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
           </p>
-          <div class="radio" style="float:left;">
-            <label><input type="radio" name="optradio" checked><h7><b>学术成果概述</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          </div>
-          <div class="radio" style="float:left;">
-            <label><input type="radio" name="optradio"><h7><b>中文计划</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          </div>
-          <div class="radio" style="float:left;">
-            <label><input type="radio" name="optradio"><h7><b>国外导师</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          </div>
-          <div class="radio" style="float:left;">
-            <label><input type="radio" name="optradio"><h7><b>国内导师</b></h7>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          </div>
         
           <div style="clear: both;"></div>
-          <b>Word共计：<span id="ms_word_count" class="redfont">0</span>&nbsp;字，
+            <b class="midtxt">Word共计：<span id="ms_word_count" class="redfont">0</span>&nbsp;字符，
             <br>模拟系统统计：<span id="moni_count" class="redfont">0</span>&nbsp;字符，
-            <br>[ <span id="select_item">学术成果概述</span> ] 一栏<span id="remain_word">还可填写：<span class="redfont" id="remain_count">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span></span></b><br>
+            <br>[ <span id="select_item">学术成果概述</span> ] 一栏<span id="remain_word">还可填写：<span class="redfont" id="remain_count">3000</span>&nbsp;字符<span style="color:green">（符合要求）</span></span>
+            <br></b>
           <textarea id="txt" name cols rows class="form-control disw" style="padding-right:0px !important;margin-top: 5px;"></textarea>
-
-          <ul class="thumbnails">
-            <li class="span4">
-              <div>
-                <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer"><img src="csc_logo.png" height="40px" style="background-color: white;"></a>
-                <div class="caption">
-                  <h5>
-                    <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer">CSC官方信息网站</a>
-                  </h5>
+          <div>
+            <ul class="thumbnails">
+              <li class="span4">
+                <div>
+                  <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer"><img src="csc_logo.png" height="84px" width="218px" style="background-color: white;"></a>
+                  <div class="caption">
+                    <h5>
+                      <a href="https://www.csc.edu.cn/chuguo" target="_blank" rel="external nofollow noopener noreferrer">CSC官方信息网站</a>
+                    </h5>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="span4">
-              <div>
-                <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer"><img src="./xhs.png" height="40px"></a>
-                <div class="caption">
-                  <h5>
-                    <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer">csc申请上岸经验指南</a>
-                  </h5>
+              </li>
+              <li class="span4">
+                <div>
+                  <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer"><img src="./xhs.png"  height="84px" width="218px" ></a>
+                  <div class="caption">
+                    <h5>
+                      <a href="https://www.xiaohongshu.com/user/profile/602cc213000000000100ae42?xsec_token=YBx8_fofFCNNHQV6S44Idw846YrPG8ZwhlEnz1sZDRZII=&xsec_source=app_share&xhsshare=CopyLink&appuid=60a0bbeb0000000001008b4e&apptime=1740643685&share_id=2819c8c34b524c42b603f2c0320eba4f" target="_blank" rel="external nofollow noopener noreferrer">csc申请上岸经验指南</a>
+                    </h5>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="span4">
-            </li>
-          </ul>
-          <div class="row-fluid">
-            <center>
-              <div class="tips">
-              </div>
-              <div>
-                <p>
-                  <img id="add_good"src="goodnews.webp" style="justify-content: center;">
-                </p>
-              </div>
-            </div>
-            </center>
+              </li>
+              <li class="span4">
+              </li>
+            </ul>
           </div>
+        
+          <p>
+            <div class="row-fluid">
+              <center>
+                <div class="tips">
+                </div>
+                <div>
+                  <p><h4 class="redfont">点击这个喜报，好运明天到！</h4></p>
+                  <p>
+                    <img id="add_good"src="goodnews.webp" style="justify-content: center;">
+                  </p>
+                </div>
+              </div>
+              </center>
+            </div>
+          </p>
           <div class="row-fluid">
             <div class="span12">
               <center><br>
